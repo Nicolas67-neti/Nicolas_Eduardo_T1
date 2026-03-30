@@ -32,6 +32,6 @@ public class PedidosService {
         if (pedido.getFechaEntrega().isBefore(LocalDate.now())) {
             return MSG_FECHA_INVALIDA;
         }
-        return "";
+        return MSG_EXITO;
     }
 }
