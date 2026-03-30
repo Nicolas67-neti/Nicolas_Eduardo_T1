@@ -15,6 +15,9 @@ public class PedidosService {
                 || pedido.getFechaEntrega() == null) {
             return MSG_CAMPOS_REQUERIDOS;
         }
+        if (!pedido.getCodigoPedido().matches("[A-Z]{2}\\d{3}")) {
+            return MSG_CODIGO_INVALIDO;
+        }
 
         return "";
     }
