@@ -74,6 +74,18 @@ public class PedidosServiceTest {
 
         assertEquals(PedidosService.MSG_FECHA_INVALIDA, resultado);
     }
+    @Test
+    void debeRegistrarPedidoCuandoTodosLosDatosSonValidos() {
+        Pedidos pedido = new Pedidos(
+                "AB123",
+                "cliente@mail.com",
+                2,
+                LocalDate.now()
+        );
 
+        String resultado = service.registrarPedido(pedido);
+
+        assertEquals(PedidosService.MSG_EXITO, resultado);
+    }
 
 }

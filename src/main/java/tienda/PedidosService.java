@@ -9,6 +9,7 @@ public class PedidosService {
     public static final String MSG_CORREO_INVALIDO = "Ingrese un correo electrónico válido";
     public static final String MSG_CANTIDAD_INVALIDA = "La cantidad debe ser mayor a cero";
     public static final String MSG_FECHA_INVALIDA = "Ingrese una fecha de entrega válida";
+    public static final String MSG_EXITO = "El pedido ha sido registrado correctamente";
     public String registrarPedido(Pedidos pedido) {
         if (pedido == null
                 || pedido.getCodigoPedido() == null
