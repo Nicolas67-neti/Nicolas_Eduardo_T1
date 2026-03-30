@@ -5,6 +5,7 @@ public class PedidosService {
     public static final String MSG_CAMPOS_REQUERIDOS = "Debe ingresar todos los datos requeridos";
     public static final String MSG_CODIGO_INVALIDO = "Ingrese un código de pedido válido";
     public static final String MSG_CORREO_INVALIDO = "Ingrese un correo electrónico válido";
+    public static final String MSG_CANTIDAD_INVALIDA = "La cantidad debe ser mayor a cero";
     public String registrarPedido(Pedidos pedido) {
         if (pedido == null
                 || pedido.getCodigoPedido() == null

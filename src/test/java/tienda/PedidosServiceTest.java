@@ -48,7 +48,19 @@ public class PedidosServiceTest {
 
         assertEquals(PedidosService.MSG_CORREO_INVALIDO, resultado);
     }
+    @Test
+    void debeMostrarErrorCuandoCantidadEsMenorOIgualACero() {
+        Pedidos pedido = new Pedidos(
+                "AB123",
+                "cliente@mail.com",
+                0,
+                LocalDate.now()
+        );
 
+        String resultado = service.registrarPedido(pedido);
+
+        assertEquals(PedidosService.MSG_CANTIDAD_INVALIDA, resultado);
+    }
 
 
 
