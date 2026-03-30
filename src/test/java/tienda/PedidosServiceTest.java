@@ -35,7 +35,19 @@ public class PedidosServiceTest {
 
         assertEquals(PedidosService.MSG_CODIGO_INVALIDO, resultado);
     }
+    @Test
+    void debeMostrarErrorCuandoCorreoNoEsValido() {
+        Pedidos pedido = new Pedidos(
+                "AB123",
+                "abc",
+                2,
+                LocalDate.now()
+        );
 
+        String resultado = service.registrarPedido(pedido);
+
+        assertEquals(PedidosService.MSG_CORREO_INVALIDO, resultado);
+    }
 
 
 
