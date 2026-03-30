@@ -22,6 +22,9 @@ public class PedidosService {
         if (pedido.getCorreoCliente().length() < 6 || !pedido.getCorreoCliente().contains("@")) {
             return MSG_CORREO_INVALIDO;
         }
+        if (pedido.getCantidadProductos() <= 0) {
+            return MSG_CANTIDAD_INVALIDA;
+        }
         return "";
     }
 }
