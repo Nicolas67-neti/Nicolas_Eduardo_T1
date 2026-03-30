@@ -22,7 +22,19 @@ public class PedidosServiceTest {
         assertEquals(PedidosService.MSG_CAMPOS_REQUERIDOS, resultado);
     }
 
+    @Test
+    void debeMostrarErrorCuandoCodigoNoEsValido() {
+        Pedidos pedido = new Pedidos(
+                "Ab123",
+                "cliente@mail.com",
+                2,
+                LocalDate.now()
+        );
 
+        String resultado = service.registrarPedido(pedido);
+
+        assertEquals(PedidosService.MSG_CODIGO_INVALIDO, resultado);
+    }
 
 
 
