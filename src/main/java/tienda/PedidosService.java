@@ -1,5 +1,7 @@
 package tienda;
 
+import java.time.LocalDate;
+
 public class PedidosService {
 
     public static final String MSG_CAMPOS_REQUERIDOS = "Debe ingresar todos los datos requeridos";
@@ -25,6 +27,9 @@ public class PedidosService {
         }
         if (pedido.getCantidadProductos() <= 0) {
             return MSG_CANTIDAD_INVALIDA;
+        }
+        if (pedido.getFechaEntrega().isBefore(LocalDate.now())) {
+            return MSG_FECHA_INVALIDA;
         }
         return "";
     }
