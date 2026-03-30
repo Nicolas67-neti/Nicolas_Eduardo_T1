@@ -18,7 +18,9 @@ public class PedidosService {
         if (!pedido.getCodigoPedido().matches("[A-Z]{2}\\d{3}")) {
             return MSG_CODIGO_INVALIDO;
         }
-
+        if (pedido.getCorreoCliente().length() < 6 || !pedido.getCorreoCliente().contains("@")) {
+            return MSG_CORREO_INVALIDO;
+        }
         return "";
     }
 }
