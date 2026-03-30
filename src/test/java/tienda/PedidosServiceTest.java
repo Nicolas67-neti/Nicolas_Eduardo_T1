@@ -61,7 +61,19 @@ public class PedidosServiceTest {
 
         assertEquals(PedidosService.MSG_CANTIDAD_INVALIDA, resultado);
     }
+    @Test
+    void debeMostrarErrorCuandoFechaEsAnteriorAHoy() {
+        Pedidos pedido = new Pedidos(
+                "AB123",
+                "cliente@mail.com",
+                2,
+                LocalDate.now().minusDays(1)
+        );
 
+        String resultado = service.registrarPedido(pedido);
+
+        assertEquals(PedidosService.MSG_FECHA_INVALIDA, resultado);
+    }
 
 
 }
